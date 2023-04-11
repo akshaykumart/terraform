@@ -21,3 +21,11 @@ resource "aws_s3_bucket_versioning" "bucket_versioning" {
 locals {
   s3_origin_id = "myS3Origin"
 }
+resource "aws_s3_bucket_public_access_block" "example1" {
+  bucket = aws_s3_bucket.bucket.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
