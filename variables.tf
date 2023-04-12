@@ -1,3 +1,5 @@
+# Input Variables
+
 variable "aws-default-region" {
   type        = string
   description = "The AWS default region where resources are created"
@@ -8,6 +10,7 @@ variable "aws-ami-id" {
   type        = string
   description = "The AWS ami id to create ec2 instance"
   default = "ami-007855ac798b5175e"
+  sensitive = true
 }
 
 variable "inst_type" {
@@ -31,3 +34,7 @@ variable "ec2_instance_tags" {
        "Type" = "Application"
    }
 }
+
+# output variables
+
+
